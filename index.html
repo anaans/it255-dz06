@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url: "https://jsonplaceholder.typicode.com/users/2",
+		type: "GET",
+		success: function(html){
+		var obj = html;
+		$("#id").append("ID: " + obj.id);
+		$("#ime").append("Ime: " + obj.name);
+		$("#korisnickoime").append("Korisnicko ime: " + obj.username);
+		$("#email").append("Email: " + obj.email);
+		$("#ulica").append("Ulica: " + obj.address.street);
+		$("#grad").append("Grad: " + obj.address.city);
+		$("#telefon").append("Telefon: " + obj.phone);
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<div id="id"></div>
+	<div id="ime"></div>
+	<div id="korisnickoime"></div>
+	<div id="email"></div>
+	<div id="ulica"></div>
+	<div id="grad"></div>
+	<div id="telefon"></div>
+	
+</body>
+</html>
